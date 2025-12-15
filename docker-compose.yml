@@ -1,0 +1,21 @@
+services:
+  mcp:
+    build: ./mcp-server
+    ports:
+      - "8001:8001"
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mcp
+    environment:
+      - GOOGLE_API_KEY=여기에_본인_API_KEY
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
