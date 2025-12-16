@@ -1,9 +1,9 @@
+from rag_store import retriever
 from langchain_core.documents import Document
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_huggingface import HuggingFaceEmbeddings
-
 
 
 
